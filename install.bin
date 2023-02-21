@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+touch ~/.tmux.conf
 append(){
   grep -qxF "$1" ~/.tmux.conf || echo "$1" >> ~/.tmux.conf
 }
