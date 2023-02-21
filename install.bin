@@ -7,7 +7,7 @@ append(){
 # check & install tmux for current user
 
 # enable mouse
-mouse_mode_str="setw -g mode-mouse on"
+mouse_mode_str="set -g mouse on"
 append "$mouse_mode_str"
 #set -g mouse-select-pane on
 #set -g mouse-resize-pane on
