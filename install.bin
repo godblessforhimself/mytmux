@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# check & install tmux for current user
+# enable mouse
+# enable vim mode
+# install Tmux Plugin Manager
+# install tmux-continuum
