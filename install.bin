@@ -1,28 +1,33 @@
 #!/usr/bin/env bash
 append(){
-  grep -qxF $1 ~/.tmux.conf || echo $1 >> ~/.tmux.conf  
+  grep -qxF "$1" ~/.tmux.conf || echo "$1" >> ~/.tmux.conf
 }
+
 # check & install tmux for current user
+
 # enable mouse
 mouse_mode_str="setw -g mode-mouse on"
-append $mouse_mode_str
+append "$mouse_mode_str"
 #set -g mouse-select-pane on
 #set -g mouse-resize-pane on
 #set -g mouse-select-window on
 
 # enable vim mode
 vim_mode_str="set-window-option -g mode-keys vi"
-append $vim_mode_str
-
-# install Tmux Plugin Manager
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-run_tmux_str="run '~/.tmux/plugins/tpm/tpm'"
-append $run_tmux_str
+append "$vim_mode_str"
 
 # install tmux-continuum
 resurrect="set -g @plugin 'tmux-plugins/tmux-resurrect'"
 continuum="set -g @plugin 'tmux-plugins/tmux-continuum'"
-append $resurrect
-append $continuum
+append "$resurrect"
+append "$continuum"
+
+
+# install Tmux Plugin Manager
+if [ ! -d ~/.tmux/plugins/tpm ]; then
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
+run_tmux_str="run '~/.tmux/plugins/tpm/tpm'"
+append "$run_tmux_str"
 
 tmux source ~/.tmux.conf
