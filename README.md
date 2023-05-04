@@ -1,5 +1,6 @@
 # mytmux
-help install tmux and config
+install tmux and config.
+`Tmux -V` shows tmux version
 ```
 ctrl-b :
 source ~/.tmux.conf
