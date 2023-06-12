@@ -9,6 +9,7 @@ append(){
 # enable mouse
 mouse_mode_str="set -g mouse on"
 append "$mouse_mode_str"
+# tmux 2.8
 #set -g mouse-select-pane on
 #set -g mouse-resize-pane on
 #set -g mouse-select-window on
